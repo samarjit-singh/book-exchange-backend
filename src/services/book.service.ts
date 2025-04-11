@@ -27,7 +27,7 @@ export const getBookById = async (id: string) => {
   return prisma.book.findUnique({
     where: { id },
     include: {
-      owner: { select: { name: true, email: true } },
+      owner: { select: { id: true, name: true, email: true, mobile: true } },
     },
   });
 };
