@@ -43,3 +43,9 @@ export const uploadBookImage = async (req: Request, res: Response) => {
   const imageUrl = await bookService.uploadBookImage(req.file);
   res.json({ message: "Image uploaded", imageUrl });
 };
+
+export const getBooksByUserId = async (req: Request, res: Response) => {
+  const { userId } = req.params;
+  const books = await bookService.getBooksByUserId(userId);
+  res.json(books);
+};

@@ -59,3 +59,12 @@ export const uploadBookImage = async (
 
   return imageUrl;
 };
+
+export const getBooksByUserId = async (userId: string) => {
+  return prisma.book.findMany({
+    where: { ownerId: userId },
+    include: {
+      owner: { select: { id: true, name: true, email: true, mobile: true } },
+    },
+  });
+};
