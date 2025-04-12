@@ -40,6 +40,6 @@ export const deleteBook = async (req: Request, res: Response) => {
 };
 
 export const uploadBookImage = async (req: Request, res: Response) => {
-  const imageUrl = await bookService.uploadBookImage(req.params.id, req.file);
+  const imageUrl = await bookService.uploadBookImage(req.file);
   res.json({ message: "Image uploaded", imageUrl });
 };

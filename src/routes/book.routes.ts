@@ -18,6 +18,6 @@ router.get("/:id", getBookById);
 router.patch("/:id/status", updateBookStatus);
 router.patch("/:id", updateBook);
 router.delete("/:id", deleteBook);
-router.post("/:id/image", upload.single("image"), uploadBookImage);
+router.post("/image", upload.single("image"), uploadBookImage);
 
 export default router;

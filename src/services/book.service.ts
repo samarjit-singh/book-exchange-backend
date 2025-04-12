@@ -51,14 +51,11 @@ export const deleteBook = async (id: string) => {
 };
 
 export const uploadBookImage = async (
-  id: string,
   file: Express.Multer.File | undefined
 ) => {
   if (!file) throw new Error("No file uploaded");
+
   const imageUrl = `/uploads/${file.filename}`;
-  await prisma.book.update({
-    where: { id },
-    data: { imageUrl },
-  });
+
   return imageUrl;
 };

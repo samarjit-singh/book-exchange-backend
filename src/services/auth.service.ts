@@ -20,7 +20,7 @@ export const loginUser = async (data: any) => {
     return null;
   }
 
-  const { id, name, role } = user;
+  const { id, name, role, email, mobile } = user;
 
-  return { id, name, role };
+  return { id, name, role, email, mobile };
 };
